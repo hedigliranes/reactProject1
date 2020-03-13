@@ -28,6 +28,21 @@
   color: #61dafb;
 }
 
+.Navbar
+{
+  background: rgb(32, 19, 44);
+  position: fixed;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.Text
+{
+  color: white;
+  font-size: 200%;
+  margin: 1%;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

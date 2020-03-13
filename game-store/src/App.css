@@ -30,10 +30,22 @@
 
 .Navbar
 {
-  background: rgb(32, 19, 44);
+  background: rgb(60, 19, 100);
   position: fixed;
   width: 100%;
-  padding-left: 10px;
+}
+
+.Sidebar
+{
+  margin: 0;
+  background: blueviolet;
+  position: fixed;
+  height: 100%;
+}
+
+.SidebarText
+{
+  margin: 0;
 }
 
 .Text
@@ -41,6 +53,7 @@
   color: white;
   font-size: 200%;
   margin: 1%;
+  display: inline;
 }
 
 @keyframes App-logo-spin {

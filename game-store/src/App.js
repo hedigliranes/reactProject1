@@ -2,11 +2,22 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App() 
+{
+  let navbar = 
+  <div className="Navbar">
+    <p className="Text" style={{float: "left"}}>Vapor</p>
+    <p className="Text" style={{float: "right"}}>Início</p>
+  </div>;
+
+  let category =
+  <div className="Sidebar">
+    <p className="SidebarText">Categorias</p>
+  </div>
+
+  let test = [navbar, <p style = {{paddingBottom : "40px", margin : "0px"}}>.</p>, category];
   return (
-      <div className="Navbar">
-        <p className="Text">Vapor</p>
-      </div>
+      test
 
     /*
     <div className="App">

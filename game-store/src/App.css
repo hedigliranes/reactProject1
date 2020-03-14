@@ -38,14 +38,31 @@
 .Sidebar
 {
   margin: 0;
-  background: blueviolet;
-  position: fixed;
-  height: 100%;
+  background: rgb(106, 38, 168);
+  padding-bottom: 45%;
+  width: 160px;
+  display: inline-block;
 }
 
-.SidebarText
+.Sidebar p
 {
   margin: 0;
+  color: white;
+}
+
+
+
+.MainScreen
+{
+  margin: 0;
+  height: 100%;
+  display: inline-block;
+}
+
+.MainScreen h1
+{ 
+  margin: 0;
+  color: white;
 }
 
 .Text

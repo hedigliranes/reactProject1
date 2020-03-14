@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import mk11 from "./images/MK11.jpg"
 
 function App() 
 {
@@ -10,12 +11,20 @@ function App()
     <p className="Text" style={{float: "right"}}>Início</p>
   </div>;
 
-  let category =
-  <div className="Sidebar">
-    <p className="SidebarText">Categorias</p>
+  let list = 
+  <div className="MainScreen">
+    <img src={mk11}></img>
   </div>
 
-  let test = [navbar, <p style = {{paddingBottom : "40px", margin : "0px"}}>.</p>, category];
+  let mainMenu =
+  <div>
+    <div className="Sidebar">
+      <p className="SidebarText">Categorias</p>
+    </div>
+    {list}
+  </div>
+
+  let test = [navbar, <p style = {{paddingBottom : "3%", margin : "0px"}}>.</p>, mainMenu];
   return (
       test
 

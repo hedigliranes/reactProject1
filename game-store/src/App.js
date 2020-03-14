@@ -1,34 +1,105 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import mk11 from "./images/MK11.jpg"
+import mk11 from "./images/MK11.jpg";
+import gtav from "./images/GTAV.jpg"
+import Games from './Games'
+import LittleCar from './LittleCar'
 
-function App() 
+class App extends React.Component 
 {
-  let navbar = 
-  <div className="Navbar">
-    <p className="Text" style={{float: "left"}}>Vapor</p>
-    <p className="Text" style={{float: "right"}}>Início</p>
-  </div>;
 
-  let list = 
-  <div className="MainScreen">
-    <img src={mk11}></img>
-  </div>
+    games = [
+    {
+      name: 'Mortal Kombat 11',
+      img: mk11,
+      price: 'R$ 120',
+      gender: 'Luta'
+    },
+    {
+      name: 'Grand Theft Auto V',
+      img: gtav,
+      price: 'R$ 80',
+      gender: 'Aventura'
+    }
+  ]
 
-  let mainMenu =
-  <div>
-    <div className="Sidebar">
-      <p className="SidebarText">Categorias</p>
-    </div>
-    {list}
-  </div>
+  constructor(props){
+    super(props)
+    this.state = {
+      gamesCar: [],
+      gender: 'Todos'
 
-  let test = [navbar, <p style = {{paddingBottom : "3%", margin : "0px"}}>.</p>, mainMenu];
-  return (
-      test
+    }
+  }
 
-    /*
+  selectGender(gender){
+    console.log(gender);
+      this.setState({
+        gender: gender
+      })
+  }
+
+  addCarrinho(jogo){
+      this.state.gamesCar.push(jogo);
+            console.log(this.state.gamesCar);
+
+      this.setState({
+        gamesCar: this.state.gamesCar
+      })
+     }
+
+
+  render(){
+
+    let navbar = 
+    <div className="Navbar">
+      <p className="Text" style={{float: "left"}}>Vapor</p>
+      <p className="Text" style={{float: "right"}}>Início</p>
+    </div>;
+
+      let list = 
+      <div className="MainScreen">
+        <Games 
+          listGames = {this.games} 
+          gender = {this.state.gender}
+          addCarrinho = {jogo => this.addCarrinho(jogo) }/>
+      </div>
+
+      let mainMenu =
+      <div className="SidebarList">
+        <div className="Sidebar">
+
+          <p className="SidebarText">Categorias</p>
+
+          <button className="SidebarButton" onClick={ () => this.selectGender("Todos")}>Todos</button>
+          
+          <button className="SidebarButton" onClick={ () => this.selectGender("Ação")}>Ação</button>
+
+          <button className="SidebarButton" onClick={ () => this.selectGender("Aventura")}>Aventura</button>
+
+          <button className="SidebarButton" onClick={ () => this.selectGender("Luta")}>Luta</button>
+
+          <button className="SidebarButton" onClick={ () => this.selectGender("Tiro")}>Tiro</button>
+
+          <button className="SidebarButton" onClick={ () => this.selectGender("RPG")}>RPG</button>
+
+
+        </div>
+
+          {list}
+      </div>
+
+      let test = [navbar, <p style = {{paddingBottom : "3%", marginBottom : "20px",marginTop : "0px"}}>.</p>, mainMenu];
+      return (test)
+
+      return (
+        <div>
+          <button onClick={ () => this.next()}>Selecionar</button>
+        </div>
+      )
+    }
+      /*
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -46,7 +117,6 @@ function App()
       </header>
     </div>
     */
-  );
 }
 
 export default App;

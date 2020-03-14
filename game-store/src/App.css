@@ -2,6 +2,58 @@
   text-align: center;
 }
 
+.container {
+  position: relative;
+  width: 50%;
+  display:inline;
+}
+
+.image {
+  opacity: 1;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  bottom: 400%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.AddButton{
+  background-color: #008CBA;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,28 +87,55 @@
   width: 100%;
 }
 
+img{
+  margin: 1em;
+  width: 450px;
+  height:auto;
+}
+
+.SidebarButton {
+    background:none;
+    border:none;
+    padding:0;
+    cursor: pointer;
+    color: white;
+    font-size: 100%;
+    margin: 1%;
+    display: inline;
+    text-align: center;
+    width:10em;
+    margin-top:10px;
+    margin-bottom:10px;
+
+}
+
 .Sidebar
 {
-  margin: 0;
+  margin-right: 10px;
   background: rgb(106, 38, 168);
-  padding-bottom: 45%;
   width: 160px;
+  height: 17.6em;
   display: inline-block;
 }
 
-.Sidebar p
+.Sidebar p, button
 {
-  margin: 0;
   color: white;
+  text-align: center;
 }
-
-
 
 .MainScreen
 {
   margin: 0;
-  height: 100%;
+  height: 80%;
   display: inline-block;
+    width:100%;
+
+}
+
+.SidebarList{
+  display:inline-flex;
+  width:100%;
 }
 
 .MainScreen h1

@@ -1,4 +1,5 @@
 import React from 'react'
+import { render } from 'react-dom';
 
 
 function LittleCar(props) {
@@ -6,9 +7,7 @@ function LittleCar(props) {
 		<h2> Results </h2>
 		<ul>
 		</ul>
-		</div> 
-
-		
+		</div> 	
 }
 
 export default LittleCar;

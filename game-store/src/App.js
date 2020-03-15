@@ -5,6 +5,7 @@ import mk11 from "./images/MK11.jpg";
 import gtav from "./images/GTAV.jpg"
 import Games from './Games'
 import LittleCar from './LittleCar'
+import CartItems from './CartItems'
 
 class App extends React.Component 
 {
@@ -49,13 +50,18 @@ class App extends React.Component
       })
      }
 
+    removeCart(index)
+    {
+      this.state.gamesCar.splice(index);
+    }
+
 
   render(){
 
     let navbar = 
     <div className="Navbar">
       <p className="Text" style={{float: "left"}}>Vapor</p>
-      <p className="Text" style={{float: "right"}}>Início</p>
+      <a className="Text" style={{float: "right"}} href="index">Início</a>
     </div>;
 
       let list = 
@@ -90,7 +96,18 @@ class App extends React.Component
           {list}
       </div>
 
-      let test = [navbar, <p style = {{paddingBottom : "3%", marginBottom : "20px",marginTop : "0px"}}>.</p>, mainMenu];
+      //let t2 = 
+
+      let cart = 
+      <div>
+        <h1 style={{textAlign : "center"}}>Carrinho</h1>
+        <CartItems 
+        cartList = {this.state.gamesCar}
+        removeCart = {index => this.removeCart(index)}
+         />
+      </div>
+
+      let test = [navbar, <p style = {{paddingBottom : "3%", marginBottom : "20px",marginTop : "0px"}}>.</p>, mainMenu, cart];
       return (test)
 
       return (

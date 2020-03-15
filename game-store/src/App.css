@@ -93,6 +93,21 @@ img{
   height:auto;
 }
 
+h1
+{
+  color: white;
+}
+
+h2
+{
+  color: white;
+}
+
+h4
+{
+  color: white;
+}
+
 .SidebarButton {
     background:none;
     border:none;

@@ -52,7 +52,10 @@ class App extends React.Component
 
     removeCart(index)
     {
-      this.state.gamesCar.splice(index);
+      this.state.gamesCar.splice(index, 1);
+      this.setState({
+        gamesCar: this.state.gamesCar
+      })
     }
 
 

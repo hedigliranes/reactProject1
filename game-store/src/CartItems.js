@@ -5,6 +5,7 @@ function CartItems(props)
     let index = 0;
     const cartItems = props.cartList.map(a => 
     {
+        let count = index;
         index++;
         return <div style={{margin: "1%", background: "rgb(80, 22, 70)"}} key={a.name}>
             <img src={a.img} style={{display: "inline", verticalAlign: "middle", width: "15%"}}></img>
@@ -12,6 +13,7 @@ function CartItems(props)
             <pre style={{display: "inline", verticalAlign: "middle"}}>       </pre>
             <h4 style={{display: "inline", verticalAlign: "middle"}}> {a.price} </h4>
             <pre style={{display: "inline", verticalAlign: "middle"}}>       </pre>
+            <button style={{color: "black"}} onClick={idx => props.removeCart(count)}>Remover do carrinho</button>
         </div>
     })
     return cartItems

@@ -103,7 +103,7 @@ class App extends React.Component
         <h1 style={{textAlign : "center"}}>Carrinho</h1>
         <CartItems 
         cartList = {this.state.gamesCar}
-        removeCart = {index => this.removeCart(index)}
+        removeCart = {indx => this.removeCart(indx)}
          />
       </div>
 
